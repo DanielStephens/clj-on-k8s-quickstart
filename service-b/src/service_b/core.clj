@@ -1,4 +1,4 @@
-(ns hey.core
+(ns service-b.core
   (:gen-class)
   (:require [ring.adapter.jetty :as jetty]))
 
@@ -10,4 +10,4 @@
 (defn -main [& args]
   (let [my-name (or (System/getenv "MY_NAME") 
                     "World")]
-    (jetty/run-jetty (partial handler my-name) {:port 3000})))
+    (jetty/run-jetty (partial handler my-name) {:port 9080})))

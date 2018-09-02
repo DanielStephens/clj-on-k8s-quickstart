@@ -1,4 +1,4 @@
-(ns hey.core
+(ns service-a.core
   (:gen-class)
   (:require [ring.adapter.jetty :as jetty]))
 
@@ -8,6 +8,6 @@
    :body (format "Hello %s from Clojure, Docker, and Kubernetes." my-name)})
 
 (defn -main [& args]
-  (let [my-name (or (System/getenv "MY_NAME") 
+  (let [my-name (or (System/getenv "MY_NAME")
                     "World")]
-    (jetty/run-jetty (partial handler my-name) {:port 3000})))
+    (jetty/run-jetty (partial handler my-name) {:port 9080})))
